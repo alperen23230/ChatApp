@@ -1,8 +1,7 @@
 //
 //  LogInViewController.swift
 //  Flash Chat
-//
-//  This is the view controller where users login
+
 
 
 import UIKit
