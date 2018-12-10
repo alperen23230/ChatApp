@@ -38,6 +38,7 @@ class RegisterViewController: UIViewController {
             (user, error) in
             
             if error != nil {
+                SVProgressHUD.dismiss()
                 print(error!)
             }
             else{

@@ -7,6 +7,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 import ChameleonFramework
+import GoogleSignIn
 
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
@@ -19,7 +20,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var messageTextfield: UITextField!
     @IBOutlet var messageTableView: UITableView!
-    
     
     
     override func viewDidLoad() {
@@ -200,6 +200,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //TODO: Log out the user and send them back to WelcomeViewController
         do{
             try Auth.auth().signOut()
+            try GIDSignIn.sharedInstance()?.signOut()
             navigationController?.popViewController(animated: true)
         }
         catch{
